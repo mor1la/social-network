@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <h2> Registration </h2>
+  
+    <div class="form-row">
+      <div class="reg_form">
+        <form class="reg_class" id="reg" (submit)="submit()">
+          <label for="email"> Email: </label>
+          <input class="form-control" id="email" type="email" name="email" [(ngModel)]="email" autocomplete="off">
+          
+          <label for="first_name"> First name: </label>
+          <input class="form-control" id="first_name" type="text" name="first_name" [(ngModel)]="first_name" autocomplete="off" required>
+          
+          <label for="second_name"> Second name: </label>
+          <input class="form-control" id="second_name" type="text" name="second_name" [(ngModel)]="second_name" autocomplete="off" required>
+          
+          <label for="birthdate"> Birthdate: </label>
+          <input class="form-control" id="birthdate" type="date" name="birthdate" [(ngModel)]="birthdate" autocomplete="off">
+        </form>
+      </div>
+    </div>
+  
+    <div class="form-row" style="margin-top: 1%">
+      <div class="text-center p-3 col-12">
+        <button class="btn btn-secondary text-light my-2" id="sign_button" type="submit" form="reg">Register</button>
+        <button style="margin-left: 0.5%" class="btn btn-secondary text-light my-2" id="reg_button" 
+                (click)="router.navigate(['/sign_in'])" type="button">Back</button>
+      </div>
+    </div>
+  </div>

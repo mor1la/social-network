@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="col-sm-2">
+        <ul class="sidebar-nav">
+            <li>
+                <a href="/profile"> Home </a>
+            </li>
+            <li *ngIf="user.role === 'admin'">
+                <a href="http://localhost:3000"> Admin panel </a>
+            </li>
+            <li>
+                <a href="/messages"> Messages </a>
+            </li>
+            <li>
+                <a href="/friends"> Friends </a>
+            </li>
+            <li>
+                <a href="/news"> News </a>
+            </li>
+            <li>
+                <a href="/add_news"> Add news </a>
+            </li>
+            <li>
+                <a href="/add_friend"> Find friends </a>
+            </li>
+            <li>
+                <a href="/" (click)="clearCookie()"> Log out </a>
+            </li>
+        </ul>
+    </div>
+</div>

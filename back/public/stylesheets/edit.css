@@ -1,0 +1,155 @@
+@font-face {
+  font-family: GoldmanB;
+  src: url("../fonts/Goldman-Bold.ttf");
+}
+
+@font-face {
+  font-family: GoldmanR;
+  src: url("../fonts/Goldman-Regular.ttf");
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: GoldmanR, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+fieldset {
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 20px;
+  background: #111111;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-family: GoldmanB, sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="date"],
+input[type="file"] {
+  font-family: GoldmanR, sans-serif;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  color: #ffffff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: #666666;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+legend {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  font-family: GoldmanB, sans-serif;
+  width: 100%;
+  padding: 0 10px;
+}
+
+#submit, #edit_button {
+  font-family: GoldmanR, sans-serif;
+  background: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 5px;
+}
+
+#submit:hover, #edit_button:hover {
+  background: #555555;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Скрываем стандартный вид file input */
+#photo::-webkit-file-upload-button {
+  display: none;
+}
+
+input[type="file"]::file-selector-button {
+  display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+  
+  fieldset {
+      padding: 15px;
+  }
+  
+  legend {
+      font-size: 1.3rem;
+  }
+  
+  input[type="text"],
+  textarea,
+  select,
+  input[type="date"],
+  input[type="file"] {
+      font-size: 1rem;
+      max-width: 100%;
+  }
+  
+  .button-group {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  #submit, #edit_button {
+      width: 100%;
+      max-width: 200px;
+  }
+}

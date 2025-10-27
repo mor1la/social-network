@@ -1,0 +1,48 @@
+<profile-base></profile-base>
+<h2>{{user.info.first_name}} {{user.info.second_name}}</h2>
+
+<div class="form-row">
+    <img width="20%" height="20%" [src]="this.user.info.photo" alt="">
+
+    <form id="upload_photo" (submit)="setPhoto()" enctype='multipart/form-data'>
+        <input type="file" id="up_photo" name="image" (change)="uploadPhoto($event)" accept="image/*">
+    </form>
+    
+    <button class="btn" id="upload_button" form="upload_photo" type="submit">Save</button>
+    <button class="btn" id="delete_button" (click)="deletePhoto()" type="button">Delete</button>
+</div>
+
+<div class="user-info-container">
+    <ul class="user-info">
+        <li *ngIf="this.user.info.email">
+            {{this.user.info.email}}
+        </li>
+        <li *ngIf="this.user.info.birthdate">
+            {{this.user.info.birthdate}}
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="newsList && newsList.length > 0">
+    <div class="card-container" *ngFor="let news of this.newsList">
+        <div class="card" *ngIf="news.text && news.text.trim() !== ''">
+            <h3>{{news.author}}</h3>
+            <ul>
+                <li>{{news.text}}</li>
+                <li>{{news.date}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="user.news && user.news.length > 0">
+    <div class="card-container" *ngFor="let news of this.user.news">
+        <div class="card" *ngIf="news.text && news.text.trim() !== ''">
+            <h3>{{user.info.first_name}} {{user.info.second_name}}</h3>
+            <ul>
+                <li>{{news.text}}</li>
+                <li>{{news.date}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

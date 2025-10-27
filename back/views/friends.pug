@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    h1= title
+
+    if users && users.length
+        .cards-container
+            for user in users
+                .card
+                    a(href='/user/' + user.id)
+                        h2= user.info.first_name + ' ' + user.info.second_name

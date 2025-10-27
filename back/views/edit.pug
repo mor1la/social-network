@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='../../stylesheets/edit.css')
+    h1= title
+
+    if user
+        .row
+            .col-md-12
+                .contaier
+                    form#editing(method='POST' action=`/user/${user.id}/edit` enctype='multipart/form-data')
+                        fieldset
+                            legend
+                                span
+                                |  editing info
+                            label#photo_label(for='photo') Choose a photo...
+                            input#photo.form-control(type="file", name="image" style="display: inline-block;")
+                            label(for='first_name') First name:
+                            input#first_name.form-control(type='text' name='first_name' style="display: inline-block;" value=user.info.first_name required)
+                            label(for='second_name') Second name:
+                            input#second_name.form-control(type='text' name='second_name' style="display: inline-block;" value=user.info.second_name required)
+                            label(for='email') Email:
+                            input#email.form-control(type='text' name='email' style="display: inline-block;" value=user.info.email)
+                            label(for='birthdate') Birthdate:
+                            input#birthdate.form-control(type='date' name='birthdate' style="display: inline-block;" value=user.info.birthdate)
+                            // add a photo
+
+                .form-row
+                    .text-center.p-3.col-12
+                        button#submit.btn.btn-secondary.text-light.my-2.info-buttons(type='submit' form="editing") Edit
+                        a#edit_button.btn.btn-secondary.text-light.my-2(href=`/user/${user.id}`) Cancel

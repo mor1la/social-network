@@ -1,0 +1,125 @@
+@font-face {
+  font-family: GoldmanB;
+  src: url("../fonts/Goldman-Bold.ttf");
+}
+
+@font-face {
+  font-family: GoldmanR;
+  src: url("../fonts/Goldman-Regular.ttf");
+}
+
+.auth-container {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: GoldmanR, sans-serif;
+  text-align: center;
+}
+
+.auth-title {
+  color: #ffffff;
+  font-family: GoldmanB, serif;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.auth-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.form-row {
+  margin-bottom: 25px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-family: GoldmanR, sans-serif;
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #ffffff;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: #333;
+}
+
+.auth-label {
+  display: block;
+  text-align: left;
+  color: #ffffff;
+  font-family: GoldmanB, sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.auth-buttons {
+  text-align: center;
+  padding: 30px !important;
+}
+
+.auth-button {
+  font-family: GoldmanR, serif;
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin: 0 10px;
+  background: #000000;
+  color: #ffffff;
+}
+
+.auth-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 20px 15px;
+  }
+  
+  .auth-title {
+    font-size: 2.2rem;
+  }
+  
+  .auth-form {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .auth-input {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+  
+  .auth-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+  }
+  
+  .auth-buttons {
+    padding: 20px !important;
+  }
+}

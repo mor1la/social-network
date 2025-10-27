@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='../stylesheets/profile.css')
+    h1= title
+
+    if user
+        .container
+            h2= user.info.first_name + ' ' + user.info.second_name
+            img(width="25%" height="25%" src=user.info.photo)
+
+            ul.user-info
+                li#role_li.user-info
+                    strong role:
+                    |    &#32;
+                    span#span_role= user.role
+
+                li.user-info
+                    strong status:
+                    |    &#32;
+                    span#span_status= user.status
+
+                if user.status === 'blocked'
+                    if user.info.email !== ''
+                        li.user-info
+                            strong email:
+                            |    &#32;
+                            span= user.info.email
+
+                if user.status === 'active'
+                    li.user-info
+                        strong email:
+                        |    &#32;
+                        span= user.info.email
+
+                if user.info.birthdate !== ''
+                    li.user-info
+                        strong birthdate:
+                        |    &#32;
+                        span= user.info.birthdate
+
+            .buttons
+
+                button#role.btn.btn-secondary.text-light.my-2() CHANGE ROLE
+                button#status.btn.btn-secondary.text-light.my-2() CHANGE STATUS
+
+                a#back_button.btn.btn-secondary.text-light.my-2.info-buttons(href='/') Back
+                a#edit_button.btn.btn-secondary.text-light.my-2.info-buttons(href=`/user/${user.id}/edit`) Edit
+                a#friends.btn.btn-secondary.text-light.my-2.info-buttons(href=`/user/${user.id}/friends`) Friends
+                a#news.btn.btn-secondary.text-light.my-2.info-buttons(href=`/user/${user.id}/news`) News
+
+    script
+        | const user = !{JSON.stringify(user)}
+    script(src="../javascripts/userProfile.js")

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='../../stylesheets/news.css')
+    h1= title
+
+    if newsList && newsList.length
+        .cards-container
+            for news in newsList
+                .card
+                    a(href='/user/' + news.author.id)
+                        h2= news.author.info.first_name + ' ' + news.author.info.second_name
+
+                    ul.user-news
+                        li.user-news
+                            span= news.text
+                        li#date.user-news
+                            span= new Date(news.date).toLocaleString()

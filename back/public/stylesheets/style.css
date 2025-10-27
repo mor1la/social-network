@@ -1,0 +1,129 @@
+@font-face {
+  font-family: GoldmanB;
+  src: url("../fonts/Goldman-Bold.ttf");
+}
+
+@font-face {
+  font-family: GoldmanR;
+  src: url("../fonts/Goldman-Regular.ttf");
+}
+
+body {
+  font-family: GoldmanR, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container-fluid {
+  display: flex;
+  min-height: 100vh;
+}
+
+.cards-container {
+  flex: 1;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: #666666;
+}
+
+.col-sm-10 {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-family: GoldmanB, sans-serif;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.col-sm-2 {
+  width: 200px;
+  background: #111111;
+  border-right: 1px solid #333333;
+  padding: 20px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  transition: background-color 0.2s ease;
+}
+
+a:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-family: GoldmanB, sans-serif;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+/* Убираем все градиенты и тени */
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Простые состояния */
+button, input, textarea, select {
+  background: #111111;
+  border: 1px solid #333333;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+button:hover, input:hover, textarea:hover, select:hover {
+  border-color: #666666;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container-fluid {
+      flex-direction: column;
+  }
+  
+  .col-sm-2 {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #333333;
+  }
+  
+  h1 {
+      font-size: 2rem;
+  }
+}
